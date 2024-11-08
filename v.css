@@ -1,0 +1,274 @@
+/* Importing Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap');
+
+/* Basic Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #e0f7fa, #f1f8e9); /* Smooth gradient for a modern look */
+    color: #333;
+    scroll-behavior: smooth;
+}
+
+/* Navbar Styling */
+nav {
+    background-color: #081652;
+    padding: 20px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition on scroll */
+}
+
+nav.scrolled {
+    background-color: #0f2743; /* Darker shade on scroll */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #ffffff;
+    color: #4CAF9D; /* Color inversion on hover */
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
+    vertical-align: middle;
+}
+
+/* Main Section (Hero Section) */
+#home {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 100px; /* Space for the fixed navbar */
+    overflow: hidden;
+    background: url('bg.jpg') no-repeat center center/cover; /* High-quality background */
+    color: white;
+    box-shadow: inset 0 0 150px rgba(0, 0, 0, 0.6); /* Deep shadow to make text more readable */
+    animation: fadeIn 2s ease-in-out; /* Fade-in effect for hero section */
+}
+
+/* 3D Effect Container */
+#three-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* Content Section */
+.content {
+    z-index: 2;
+    color: #ffffff;
+    padding: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Subtle text shadow for better readability */
+}
+
+/* Hero Text */
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.5em;
+    margin: 0;
+    line-height: 1.2;
+    letter-spacing: 1px;
+    color: #ffffff;
+    animation: slideInFromTop 1.5s ease-out; /* Smooth sliding text animation */
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3em;
+    margin-top: 15px;
+    line-height: 1.2;
+    color: #3739d8;
+    letter-spacing: 1px;
+    opacity: 0.8;
+    animation: slideInFromBottom 1.5s ease-out; /* Slide-up effect for subheading */
+}
+
+/* Paragraph Styling */
+p {
+    font-size: 2.2em;
+    font-family: 'Roboto', sans-serif;
+    margin: 20px 0;
+    line-height: 1.7;
+    color: #ffffff;
+    animation: fadeInText 2s ease-in-out; /* Smooth fade-in animation */
+}
+
+/* Button Styling */
+button {
+    background-color: #1b13b3d6;
+    color: #ffffff;
+    padding: 18px 45px;
+    border: none;
+    border-radius: 45px;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    margin-top: 30px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    /*Buttonwithshadow*/transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    -webkit-border-radius: 45px;
+    -moz-border-radius: 45px;
+    -ms-border-radius: 45px;
+    -o-border-radius: 45px;
+}
+
+button:hover {
+    background-color: #ff4500;
+    transform: translateY(-7px); /* Lift effect */
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
+}
+
+/* Footer Styling */
+footer {
+    background-color: #2e5daa;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.2); /* Shadow on footer */
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+footer a {
+    color: #4CAF9D;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromTop {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromBottom {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 3.2em;
+    }
+
+    h2 {
+        font-size: 2.2em;
+    }
+
+    p {
+        font-size: 1.4em;
+    }
+
+    button {
+        padding: 12px 35px;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 4em;
+    }
+
+    p {
+        font-size: 1.2em;
+    }
+
+    button {
+        padding: 12px 30px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}
+
+/* Extra: Scroll to Section Function */
+html {
+    scroll-behavior: smooth;
+}

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Signup</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        /* Import Google Fonts */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background: url('bg.jpg') no-repeat center center fixed;
+            background-size: cover;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        nav {
+            background-color: #081652;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 10;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #ffffff;
+            color: #4CAF9D;
+        }
+
+        .logo {
+            width: 40px;
+            height: 40px;
+        }
+
+        /* Signup Section */
+        #signup-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            max-width: 400px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 2;
+        }
+
+        .signup-title {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5em;
+            color: #081652;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"], input[type="email"], input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            background-color: #081652;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #4CAF9D;
+            transform: translateY(-3px);
+        }
+
+        footer {
+            background-color: #081652;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">
+            <img src="logo.webp" alt="Healthcare Logo" width="40px" height="40px">
+        </div>
+        <ul>
+            <li><a href="#signup">Signup</a></li>
+            <li><a href="#home">Home</a></li>
+        </ul>
+    </nav>
+
+    <!-- Signup Form -->
+    <div id="signup-container">
+        <h2 class="signup-title">Sign Up</h2>
+        <form action="#" method="POST">
+            <div class="input-group">
+                <input type="text" placeholder="Full Name" required>
+            </div>
+            <div class="input-group">
+                <input type="email" placeholder="Email Address" required>
+            </div>
+            <div class="input-group">
+                <input type="password" placeholder="Password" required>
+            </div>
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Healthcare Inc. | All rights reserved</p>
+    </footer>
+
+</body>
+</html>
