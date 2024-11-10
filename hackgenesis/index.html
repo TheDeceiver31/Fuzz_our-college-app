@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumni and Mentorship Program</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/events/">Events</a></li>
+            <li><a href="/home/">Home</a></li>
+            <li><a href="/facalty/">Faculty</a></li>
+            <li><a href="/health/">Healthcare</a></li>
+        </ul>
+    </nav>
+    
+    <header>
+        <h1>Alumni and Mentorship Program</h1>
+    </header>
+
+    <div class="container">
+        <!-- Photos of Past Events Section -->
+        <h2 class="section-title">Photos of Past Events</h2>
+        <div class="grid" id="photos-gallery"></div>
+
+        <section class="intro">
+            <p>Connect with our alumni and mentorship network for career advice, networking opportunities, and professional growth.</p>
+        </section>
+
+        <h2 class="section-title">Alumni Profiles</h2>
+        <div class="grid" id="alumni-section"></div>
+
+        <h2 class="section-title">Mentorship Opportunities</h2>
+        <div class="grid" id="mentorship-section"></div>
+
+        <!-- Back Button -->
+        <button class="back-btn" onclick="goBack()">Back</button>
+    </div>
+
+    <!-- Modal for Profile Details -->
+    <div class="modal" id="profile-modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h3 id="modal-name"></h3>
+            <p id="modal-role"></p>
+            <p id="modal-bio"></p>
+        </div>
+    </div>
+
+    <!-- Event Image Modal -->
+    <div class="modal" id="photo-modal">
+        <span class="close-btn" onclick="closePhotoModal()">&times;</span>
+        <img id="photo-modal-image" alt="Event Photo">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

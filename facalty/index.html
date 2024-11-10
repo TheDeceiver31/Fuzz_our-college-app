@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Faculty Page</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Filter Button and Dropdown -->
+  <div class="filter-container">
+    <button class="filter-btn" onclick="toggleDropdown()">Filter</button>
+    <div class="dropdown-content" id="dropdown">
+      <button onclick="filterFaculty('Civil')">Civil</button>
+      <button onclick="filterFaculty('Mechanical')">Mechanical</button>
+      <button onclick="filterFaculty('Electrical')">Electrical</button>
+      <button onclick="filterFaculty('Computer')">Computer</button>
+      <button onclick="filterFaculty('Basic Sciences')">Basic Sciences</button>
+      <button onclick="filterFaculty('All')">All</button>
+    </div>
+  </div>
+  
+  <nav>
+    <ul>
+        <li><a href="/events/">Events</a></li>
+        <li><a href="/home/">Home</a></li>
+        <li><a href="/hackgenesis/">About Alumni</a></li>
+        <li><a href="/health/">Healthcare</a></li>
+        <li><a href="/event calendar/">Event Calendar</a></li>
+    </ul>
+</nav>
+
+  <!-- Header Section -->
+  <div class="header-container">
+    <header class="header-section">
+      <div class="header-content">
+        <h1>Our Faculty</h1>
+        <h3>Meet our esteemed faculty of IITRAM and explore their latest projects and research work.</h3>
+      </div>
+    </header>
+  </div>
+
+  <!-- Faculty List Section -->
+  <section id="faculty-list" class="faculty-list">
+    
+    <!-- Dr. Manish Chaturvedi -->
+    <div class="faculty-member" data-department="Computer">
+      <img src="manish1.jpg" alt="Dr. Manish Chaturvedi">
+      <h2>Dr. Manish Chaturvedi</h2>
+      <p>Professor of Computer Science</p>
+      <button class="learn-more-btn" onclick="showDetails('faculty1-details')">Learn More</button>
+      <div id="faculty1-details" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeDetails('faculty1-details')">&times;</span>
+          <h3>Dr. Manish Chaturvedi</h3>
+          <p><strong>Ongoing Project:</strong> AI in Education</p>
+          <p><strong>Upcoming Project:</strong> Ethical AI</p>
+          <p><strong>Past Project:</strong> Data Science for Social Good</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dr. Manish Sharma -->
+    <div class="faculty-member" data-department="Electrical">
+      <img src="manish2.jpg" alt="Dr. Manish Sharma">
+      <h2>Dr. Manish Sharma</h2>
+      <p>Professor of Electrical Engineering</p>
+      <button class="learn-more-btn" onclick="showDetails('faculty2-details')">Learn More</button>
+      <div id="faculty2-details" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeDetails('faculty2-details')">&times;</span>
+          <h3>Dr. Manish Sharma</h3>
+          <p><strong>Ongoing Project:</strong> Power Systems Research</p>
+          <p><strong>Upcoming Project:</strong> Renewable Energy Solutions</p>
+          <p><strong>Past Project:</strong> Smart Grids</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dr. Navneet Khanna -->
+    <div class="faculty-member" data-department="Mechanical">
+      <img src="khanna.jpg" alt="Dr. Navneet Khanna">
+      <h2>Dr. Navneet Khanna</h2>
+      <p>Professor of Mechanical Engineering</p>
+      <button class="learn-more-btn" onclick="showDetails('faculty3-details')">Learn More</button>
+      <div id="faculty3-details" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeDetails('faculty3-details')">&times;</span>
+          <h3>Dr. Navneet Khanna</h3>
+          <p><strong>Ongoing Project:</strong> Robotics in Manufacturing</p>
+          <p><strong>Upcoming Project:</strong> Advanced Materials Research</p>
+          <p><strong>Past Project:</strong> Industrial Automation</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dr. Kannan Iyer -->
+    <div class="faculty-member" data-department="Civil">
+      <img src="iyyer.jpg" alt="Dr. Kannan Iyer">
+      <h2>Dr. Kannan Iyer</h2>
+      <p>Professor of Civil Engineering</p>
+      <button class="learn-more-btn" onclick="showDetails('faculty4-details')">Learn More</button>
+      <div id="faculty4-details" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeDetails('faculty4-details')">&times;</span>
+          <h3>Dr. Kannan Iyer</h3>
+          <p><strong>Ongoing Project:</strong> Structural Health Monitoring</p>
+          <p><strong>Upcoming Project:</strong> Sustainable Infrastructure</p>
+          <p><strong>Past Project:</strong> Earthquake Resistant Design</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dr. Prakash Dabhi -->
+    <div class="faculty-member" data-department="Basic Sciences">
+      <img src="dabhi.jpg" alt="Dr. Prakash Dabhi">
+      <h2>Dr. Prakash Dabhi</h2>
+      <p>Professor of Basic Sciences and Humanities</p>
+      <button class="learn-more-btn" onclick="showDetails('faculty5-details')">Learn More</button>
+      <div id="faculty5-details" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeDetails('faculty5-details')">&times;</span>
+          <h3>Dr. Prakash Dabhi</h3>
+          <p><strong>Ongoing Project:</strong> Quantum Computing</p>
+          <p><strong>Upcoming Project:</strong> Nanotechnology Applications</p>
+          <p><strong>Past Project:</strong> Theoretical Physics</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dr. Wati Longkumar -->
+    <div class="faculty-member" data-department="Basic Sciences">
+      <img src="wati.jpg" alt="Dr. Wati Longkumar">
+      <h2>Dr. Wati Longkumar</h2>
+      <p>Professor of Basic Sciences and Humanities</p>
+      <button class="learn-more-btn" onclick="showDetails('faculty6-details')">Learn More</button>
+      <div id="faculty6-details" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeDetails('faculty6-details')">&times;</span>
+          <h3>Dr. Wati Longkumar</h3>
+          <p><strong>Ongoing Project:</strong> Environmental Science</p>
+          <p><strong>Upcoming Project:</strong> Climate Change Research</p>
+          <p><strong>Past Project:</strong> Renewable Energy Studies</p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

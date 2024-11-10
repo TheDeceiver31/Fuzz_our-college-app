@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IITRAM College</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Add the Three.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>IITRAM College</h1>
+        <nav>
+            <ul>
+                <li><a href="/convocation/">Convocation</a></li>
+                <li><a href="/facalty/">Faculty</a></li>
+                <li><a href="/hackgenesis/">Alumni</a></li>
+                <li><a href="/event calendar/">Event Calendar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="image-gallery">
+            <h1>Latest Events Held in IITRAM</h1>
+            <div class="gallery">
+                <div class="event">
+                    <img src="event1.png" alt="Event 1">
+                    <button class="details-btn">Details</button>
+                    <div class="event-details" id="event-details-1">
+                        <span class="close-btn" onclick="closeEventDetails()">×</span>
+                        <h3>Event 1 Details</h3>
+                        <img src="event1.png" alt="Event 1">
+                        <p>This is the detailed description of Event 1. The event was held to showcase ...</p>
+                    </div>
+                </div>
+                <div class="event">
+                    <img src="event2.png" alt="Event 2">
+                    <button class="details-btn">Details</button>
+                    <div class="event-details" id="event-details-2">
+                        <span class="close-btn" onclick="closeEventDetails()">×</span>
+                        <h3>Event 2 Details</h3>
+                        <img src="event2.png" alt="Event 2">
+                        <p>Hack Genesis is the hackathon event which is being held at IITRAM for the first time. It is a great opportunity for programmers to showcase their skills. It will be held in our college from November 8 to November 10.</p>
+                    </div>
+                </div>
+                <div class="event">
+                    <img src="event 3.jpg" alt="Event 3">
+                    <button class="details-btn">Details</button>
+                    <div class="event-details" id="event-details-3">
+                        <span class="close-btn" onclick="closeEventDetails()">×</span>
+                        <h3>Event 3 Details</h3>
+                        <img src="event 3.jpg" alt="Event 3">
+                        <p>This is the detailed description of Event 3. It was a major event with notable speakers ...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="news">
+            <p>.....</p>
+            <p>Stay updated with the latest happenings at IITRAM.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Copyright © 2024 Institute of Infrastructure, Technology, Research And Management. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Audio elements for each event -->
+    <audio id="sound-event-1" src="event1.mp3"></audio>
+    <audio id="sound-event-2" src="event1.mp3"></audio>
+    <audio id="sound-event-3" src="path/to/sound-event-3.mp3"></audio>
+
+    <!-- Three.js container for 3D text -->
+    <div id="three-container" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

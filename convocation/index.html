@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Convocation Ceremony</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Back Button -->
+  <button class="back-btn" onclick="history.back()">Back</button>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <h1>Convocation Ceremony</h1>
+    <p>Celebrate achievements and embrace new beginnings</p>
+  </section>
+
+  <!-- Schedule Section -->
+  <section class="schedule-section">
+    <h2>Schedule</h2>
+    <p><strong>Date:</strong> 10th December 2024</p>
+    <p><strong>Time:</strong> 10:00 AM - 4:00 PM</p>
+    <p><strong>Location:</strong> The Shyama Prasad Mukherji Auditorium, Ahmedabad</p>
+  </section>
+
+  <!-- Speakers Section -->
+  <section class="speakers-section">
+    <h2>Speakers</h2>
+    <div class="speakers">
+      <!-- Speaker 1 -->
+      <div class="speaker">
+        <img src="convocation-chiefguest-2024.jpg" alt="Prof. Barjor Mehta" class="speaker-img">
+        <h3>Prof. Barjor Mehta</h3>
+        <button class="learn-more" onclick="showDetailsAndPlaySound('speaker1-details', 'e1.mp3')">Learn More</button>
+      </div>
+
+      <!-- Speaker 2 -->
+      <div class="speaker">
+        <img src="convocation-chiefguest-2022_2023.jpg" alt="Prof. Sanghamitra Bandyopadhyay" class="speaker-img">
+        <h3>Prof. Sanghamitra Bandyopadhyay</h3>
+        <button class="learn-more" onclick="showDetailsAndPlaySound('speaker2-details', 'e2.mp3')">Learn More</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal for Speaker 1 Details -->
+  <div id="speaker1-details" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeDetails('speaker1-details')">&times;</span>
+      <h3>Prof. Barjor Mehta</h3>
+      <p><strong>Title:</strong> President of CEPT University, Ahmedabad, India.</p>
+      <p>Prof. Barjor Mehta is the President of CEPT University, Ahmedabad, India. The University was established in 1962 and focuses on understanding, designing, planning, constructing, and managing human habitats. The University comprises six faculties: Architecture, Planning, Technology, Design, Management, and a Foundation Program. Prof. Mehta has close to 40 years of experience in the urban sector, including working with the World Bank on various projects globally.</p>
+    </div>
+  </div>
+
+  <!-- Modal for Speaker 2 Details -->
+  <div id="speaker2-details" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeDetails('speaker2-details')">&times;</span>
+      <h3>Prof. Sanghamitra Bandyopadhyay</h3>
+      <p>Prof. Sanghamitra Bandyopadhyay did her B Tech, M Tech, and Ph.D. in Computer Science from Calcutta University, IIT Kharagpur, and the Indian Statistical Institute, respectively. She is currently the Director of the Indian Statistical Institute. Her research interests include computational biology, artificial intelligence, and machine learning. She has received numerous awards including the Padma Shri award in 2022.</p>
+    </div>
+  </div>
+
+  <!-- Gallery Section -->
+  <section class="gallery-section">
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <img src="6th_convocation.jpg" alt="Convocation 2024" class="gallery-img">
+      <img src="5th.jpg" alt="Convocation 2023" class="gallery-img">
+      <img src="4th.jpg" alt="Convocation 2022" class="gallery-img">
+    </div>
+  </section>
+
+  <!-- Past Convocations Section -->
+  <section class="past-convocations">
+    <h2>Past Convocations</h2>
+    <ul>
+      <li>2024 - The Shyama Prasad Mukherji Auditorium</li>
+      <li>2023 - The Shyama Prasad Mukherji Auditorium</li>
+      <li>2022 - The Shyama Prasad Mukherji Auditorium</li>
+    </ul>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

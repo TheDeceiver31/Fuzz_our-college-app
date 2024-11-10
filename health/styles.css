@@ -1,0 +1,85 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    background-color: #f8f8f8;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  .header {
+    background-color: #048e92;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  .back-button {
+    margin: 1rem;
+  }
+  
+  .back-button button {
+    background-color: #048e92;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .content {
+    width: 90%;
+    max-width: 800px;
+    margin: 2rem auto;
+    text-align: center;
+  }
+  
+  .appointment {
+    margin-bottom: 2rem;
+  }
+  
+  .appointment h2 {
+    color: #048e92;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+  
+  label {
+    margin-top: 0.5rem;
+    color: #555;
+  }
+  
+  input, select, button {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  
+  button[type="submit"] {
+    background-color: #048e92;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 1rem;
+    border-radius: 5px;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #036e70;
+  }
+  
+  .footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+  }

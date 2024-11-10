@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot - Medical Assistant</title>
+    <style>
+        /* Styling the chatbot UI */
+        body {
+            font-family: Arial, sans-serif;
+            background: url('bg.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            height: 100vh;
+            background-color: #f7f9fc;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5em;
+            margin: 20px 0;
+            line-height: 1.2;
+            letter-spacing: 1px;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+            text-align: center;
+            animation: slideInFromTop 1.5s ease-out; /* Smooth sliding text animation */
+        }
+
+        @keyframes slideInFromTop {
+            0% {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .chat-container {
+            width: 100%;
+            max-width: 500px;
+            height: 600px;
+            background: rgba(238, 238, 249, 0.483);
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-box {
+            flex-grow: 1;
+            padding: 20px;
+            border-radius: 20px;
+            overflow-y: auto;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .message {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 10px;
+            max-width: 80%;
+            word-wrap: break-word;
+        }
+
+        .user-message {
+            background-color: #0065c3;
+            color: white;
+            align-self: flex-end;
+        }
+
+        .bot-message {
+            background-color: #f1f1f1;
+            color: #333;
+            align-self: flex-start;
+        }
+
+        .input-container {
+            display: flex;
+            padding: 15px;
+            background: #e8e9ea;
+            border-top: 2px solid #ddd;
+        }
+
+        input[type="text"] {
+            flex-grow: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+
+        button {
+            background-color: #2077da;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #3d069c;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>IITRAM CHATBOT</h1>
+
+    <div class="chat-container">
+        <div class="chat-box" id="chat-box">
+            <div class="message bot-message">Hello! How can I assist you today? Ask me anything about healthcare or medical topics.</div>
+        </div>
+
+        <div class="input-container">
+            <input type="text" id="user-input" placeholder="Type a message..." />
+            <button type="button" onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        let chatbotData = {}; // To hold the question-answer data from the JSON
+
+        // Function to load the JSON data (questions.json)
+        const loadChatbotData = async () => {
+            try {
+                const response = await fetch('questions.json'); // Fetch the JSON file
+                chatbotData = await response.json(); // Parse the JSON content
+            } catch (error) {
+                console.error("Error loading chatbot data:", error);
+            }
+        };
+
+        // Load chatbot data as soon as the page is ready
+        loadChatbotData();
+
+        const chatBox = document.getElementById('chat-box');
+        const userInput = document.getElementById('user-input');
+
+        // Function to create chat elements (incoming or outgoing messages)
+        function createChatMessage(message, className) {
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('message', className);
+            messageElement.textContent = message;
+            chatBox.appendChild(messageElement);
+        }
+
+        // Function to handle user input and send response
+        function sendMessage() {
+            const userMessage = userInput.value.trim().toLowerCase(); // Get user input
+            if (!userMessage) return;
+
+            // Display user message in chat box
+            createChatMessage(userMessage, 'user-message');
+
+            // Scroll to bottom
+            chatBox.scrollTop = chatBox.scrollHeight;
+
+            // Clear input field
+            userInput.value = '';
+
+            setTimeout(() => {
+                let response = chatbotData[userMessage] || "Sorry, I didn't understand that."; // Find response from JSON
+                createChatMessage(response, 'bot-message');
+
+                // Scroll to bottom
+                chatBox.scrollTop = chatBox.scrollHeight;
+            }, 600); // Simulate typing delay
+        }
+
+        // Event listener for pressing Enter key
+        userInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                sendMessage();
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,201 @@
+/* Importing Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;500&display=swap');
+
+/* Basic Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    background: linear-gradient(135deg, #cfd9df, #e2ebf0);
+    color: #478e68;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+/* Global border styling */
+* {
+    box-sizing: border-box;
+    border-color: #15835d;
+}
+
+/* Navbar Styling */
+nav {
+    background-color: #3a8488;
+    padding: 20px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+nav.scrolled {
+    background-color: #1e2a38;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+nav ul li a:hover {
+    background-color: #22f2c8;
+    color: #2c3e50;
+}
+
+/* Main Section (Hero Section) */
+#home {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 100px; /* Space for the fixed navbar */
+    background: url('bg.jpg') no-repeat center center/cover;
+    color: white;
+    box-shadow: inset 0 0 200px rgba(0, 0, 0, 0.7);
+    animation: fadeIn 2s ease-in-out;
+    overflow: hidden;
+}
+
+/* 3D Effect Container */
+#three-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* Content Section */
+.content {
+    z-index: 2;
+    color: #ffffff;
+    padding: 20px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
+}
+
+/* 3D Hero Text */
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 4.5em;
+    margin: 0;
+    line-height: 1.2;
+    letter-spacing: 1.2px;
+    color: #f39c12;
+    font-weight: 800;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5), 2px 2px 5px rgba(255, 255, 255, 0.2);
+    animation: slideInFromTop 1.5s ease-out;
+    transform: perspective(500px) rotateX(10deg);
+    -webkit-text-stroke: 0.25px black; /* Adds a border of 2px in black color */
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 7em; /* Increased size from 8.9em to 10em */
+    margin-top: 25px;
+    line-height: 1.2;
+    color: #f0eaea;
+    letter-spacing: 1.2px;
+    opacity: 0.9;
+    font-weight: 800;
+    text-shadow: 15px 15px 5px rgba(0, 0, 0, 0.4);
+    animation: slideInFromBottom 1.5s ease-out;
+    -webkit-text-stroke: 1px black; /* Adds a border of 2px in black color */
+ /*Addsaborderof2pxinblackcolor*/background: rgba(4, 2, 2, 0.1);
+    /*Transparentwhitebackground*/border-radius: 10px;
+}
+
+/* Paragraph Styling */
+p {
+    font-size: 2.2em;
+    line-height: 1.8;
+    font-weight: 500;
+    color: #ffffff;
+    animation: fadeInText 2s ease-in-out;
+    text-shadow: 15px 15px 5px rgba(0, 0, 0, 0.2);
+    -webkit-text-stroke: 0.5px black;
+    /*Addsaborderof2pxinblackcolor*/background: rgba(4, 2, 2, 0.4);
+    /*Transparentwhitebackground*/border-radius: 10px;
+  
+    
+}
+
+/* Button Styling */
+button {
+    background-color: #3a8b6c;
+    color: #ffffff;
+    padding: 12px 30px;
+    border: 2px solid #24704a;
+    border-radius: 45px;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    cursor: pointer;
+    margin-top: 30px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    background-color: #17ab5f;
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Footer Styling */
+footer {
+    background-color: #267160;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+    position: relative;
+    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.3);
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromTop {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY}}
