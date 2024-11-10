@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare & Wellbeing</title>
+    <link rel="stylesheet" href="v.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Section -->
+    <section id="home">
+        <div id="three-container"></div>
+        <div class="content">
+            <h1>Welcome to </h1>
+            <h2>HealMe</h2>
+            <p>Your health is our priority.</p>
+            <button onclick="window.location.href='signup/';">Login/Signup</button>
+            <!-- Chatbot Button -->
+            <button onclick="window.location.href='chatbot/c.html';">Chat with our AI</button>
+        </div>
+    </section>
+
+    <!-- Chatbot Section -->
+    <section id="chatbot" style="display: none;">
+        <div id="chat-container">
+            <h3>Chatbot</h3>
+            <div id="chat-box">
+                <!-- Messages will appear here -->
+            </div>
+            <input type="text" id="user-input" placeholder="Ask a question...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Healthcare & Wellbeing. All rights reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="v.js"></script>
+    <script>
+        // Toggle Chatbot visibility
+        function toggleChatbot() {
+            const chatbotSection = document.getElementById('chatbot');
+            if (chatbotSection.style.display === 'none') {
+                chatbotSection.style.display = 'block';
+            } else {
+                chatbotSection.style.display = 'none';
+            }
+        }
+
+        // Function to handle sending a message
+        function sendMessage() {
+            const userMessage = document.getElementById('user-input').value.trim();
+            if (userMessage === '') return;
+
+            // Display user message
+            const chatBox = document.getElementById('chat-box');
+            const userMessageElement = document.createElement('div');
+            userMessageElement.textContent = userMessage;
+            chatBox.appendChild(userMessageElement);
+
+            // Clear input field
+            document.getElementById('user-input').value = '';
+
+            // Call backend API (you can replace this with your API interaction)
+            fetch('/ask-chatbot', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ userMessage: userMessage })
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Display bot response
+                const botMessageElement = document.createElement('div');
+                botMessageElement.textContent = data.botMessage;
+                chatBox.appendChild(botMessageElement);
+            })
+            .catch(error => console.error('Error:', error));
+        }
+    </script>
+
+</body>
+</html>
