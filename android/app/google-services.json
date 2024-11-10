@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "826956326402",
+    "project_id": "a-i-gen-project-5m8zlr",
+    "storage_bucket": "a-i-gen-project-5m8zlr.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:826956326402:android:8bcfce231476e6e6faa91b",
+        "android_client_info": {
+          "package_name": "com.example.fuzz"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIVkEN98jFlETgynHm8S6aPS1DsePKjNI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
